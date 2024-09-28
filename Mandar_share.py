@@ -3,11 +3,11 @@ from office365.runtime.auth.authentication_context import AuthenticationContext
 from office365.sharepoint.client_context import ClientContext
 
 # Configurações
-site_url = "h*****8"
-username = "*****"
-password = '********'
-sharepoint_folder = "***"
-local_folder = "*******"
+site_url = "https://grupolorac.sharepoint.com/sites/Dinho"
+username = "kewin.delazer@grupolorac.onmicrosoft.com"
+password = '@@Bebidas2024'
+sharepoint_folder = "/sites/Dinho/Documentos Compartilhados/Dados/Comercial/Equipes/Gerencial/3 TRI 2024/Análises Comercial"
+local_folder = "C:/Users/Kewin Delazeri/Documents/SCRIPT_ACOMPANHAMENTOS/SCRIPITADOS"
 
 # Autenticação
 ctx_auth = AuthenticationContext(site_url)

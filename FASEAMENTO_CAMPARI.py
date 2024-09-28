@@ -137,10 +137,10 @@ diretorio = r'C:\\Users\\Kewin Delazeri\\Documents\\SCRIPT_ACOMPANHAMENTOS\\SCRI
 # Nome do arquivo Excel
 nome_arquivo = os.path.join(diretorio, 'Faseamento_campari.xlsx')
 
-positivacoes_completo = positivacoes_completo.sort_values(by='MARCA')
-result_completo = result_completo.sort_values(by='Nome Equipe')
-Positiva_mercado = Positiva_mercado.sort_values(by='Nome Equipe')
-quarteto = quarteto.sort_values(by='Nome Equipe')
+positivacoes_completo = positivacoes_completo.sort_values(by=['Nome Equipe','MARCA']).reset_index(drop=True)
+result_completo = result_completo.sort_values(by=['Nome Equipe','MARCA']).reset_index(drop=True)
+Positiva_mercado = Positiva_mercado.sort_values(by=['Nome Equipe']).reset_index(drop=True)
+quarteto = quarteto.sort_values(by=['Nome Equipe']).reset_index(drop=True)
 
 
 # Salvando os DataFrames em um arquivo Excel com múltiplas planilhas

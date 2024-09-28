@@ -41,8 +41,8 @@ volumes = pd.merge(todas_volumes, volume, on="Nome Equipe", how='left').fillna(0
 
 
 
-volumes_sorted = volumes.sort_values(by='Nome Equipe').reset_index(drop=True)
-positiva_sorted = positiva.sort_values(by='Nome Equipe').reset_index(drop=True)
+volumes_sorted = volumes.sort_values(by=['Nome Equipe']).reset_index(drop=True)
+positiva_sorted = positiva.sort_values(by=['Nome Equipe']).reset_index(drop=True)
 
 
 # Salvar os DataFrames em um arquivo Excel com planilhas separadas

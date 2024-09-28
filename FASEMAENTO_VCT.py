@@ -145,8 +145,8 @@ CLASSE_unicas = df_unique['CLASSE'].unique()
 nome_equipe_unicos = df_unique['Nome Equipe'].unique()
 
 # Criar todas as combinações possíveis de 'MARCA' e 'Nome Equipe'
-todas_combinacoes = pd.DataFrame(list(itertools.product(CLASSE_unicas, nome_equipe_unicos)),
-                                 columns=['CLASSE', 'Nome Equipe'])
+#todas_combinacoes = pd.DataFrame(list(itertools.product(CLASSE_unicas, nome_equipe_unicos)),
+#                                 columns=['CLASSE', 'Nome Equipe'])
 
 # Agrupar para calcular a quantidade de positivações
 positivacoes = df_unique.groupby(['CLASSE', 'Nome Equipe']).size().reset_index(name='Positivas')
@@ -164,8 +164,8 @@ diretorio = r'C:\\Users\\Kewin Delazeri\\Documents\\SCRIPT_ACOMPANHAMENTOS\\SCRI
 # Nome do arquivo Excel
 nome_arquivo = os.path.join(diretorio, 'Faseamento_vct.xlsx')
 
-result_volume_completo = result_volume_completo.sort_values(by='Nome Equipe')
-positivacoes_completo = positivacoes_completo.sort_values(by='Nome Equipe')
+result_volume_completo = result_volume_completo.sort_values(by=['Nome Equipe','CLASSE']).reset_index(drop=True)
+positivacoes_completo = positivacoes_completo.sort_values(by=['Nome Equipe','CLASSE']).reset_index(drop=True)
 
 
 

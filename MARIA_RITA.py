@@ -29,44 +29,35 @@ mapeamento_produtos = {
     2805: "SKYY",
     8889: "SAGATIBA",
     1209: "SAGATIBA",
-    4339: "CAMPARI",
-    8815: "OUTROS",
-    657: "PREMIUM",
+    4339: "PREMIUM",
     6195: "POPULAR CAMPARI",
-    2522:"OUTROS",
-    10063: "OUTROS",
-    10064: "OUTROS",
-    10065: "OUTROS",
-    3423: 'OUTROS',
-    539: "PREMIUM",
+    10063: "PREMIUM",
+    10064: "PREMIUM",
+    10065: "PREMIUM",
     925: 'PREMIUM',
     2503 : 'PREMIUM',
-    2804 : 'OUTROS',
+    2804 : 'PREMIUM',
     832 : 'PREMIUM',
-    2520: 'OUTROS',
+    2520: 'PREMIUM',
     1522 : 'PREMIUM',
-    3426 : 'OUTROS',
     8733 : 'PREMIUM',
     1399 : 'PREMIUM',
     1398 : 'PREMIUM',
-    4327 : 'PREMIUM',
+    4327 : 'CAMPARI',
     2523 : "PREMIUM",
     2521 : "PREMIUM",
-    716 : 'OUTROS',
-    715 : 'OUTROS',
-    8825 : 'PREMIUM',
     693: 'POPULAR CAMPARI',
-    2522 : 'POPULAR CAMPARI',
+    2522 : 'PREMIUM',
     388 : 'POPULAR CAMPARI',
-    6668 : "PREMIUM",
-    4588 : "PREMIUM",
-    5265 : "PREMIUM",
     4456 : "PREMIUM",
-    4457 : "PREMIUM",
     3653 : 'PREMIUM'
 }
 
-df_final['MARCA'] = df_final['Produto'].map(mapeamento_produtos)
+def classificar_categoria(marca):
+    return mapeamento_produtos.get(marca, "OUTROS")
+
+
+df_final['MARCA'] = df_final['Produto'].apply(classificar_categoria)
 
 
 quantidade = df_final.groupby('MARCA')['Qtde'].sum().reset_index()

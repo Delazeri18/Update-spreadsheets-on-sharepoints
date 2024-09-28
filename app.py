@@ -19,7 +19,7 @@ scripts = {
     'VCT_PR_ONN_OF.xlsx': 'VCT_ONN_OF.py',
     'TEMPLATE_KA_MARIA.xlsx': 'MARIA_RITA.py',
     'Template_CC.xlsx' : 'CAMPARI_CLUB.py',
-    'Equipes_jack.xlsx' : 'faseamento_JACK',
+    'Equipes_jack.xlsx' : 'faseamento_JACK.py',
     'Equipe_Beam.xlsx' : 'faseamento_beam.py'
 }
 

@@ -185,11 +185,11 @@ nome_arquivo = os.path.join(diretorio, 'FASEAMENTO_PERNOD.xlsx')
 
 # Organizando 
 
-result_completo = result_completo.sort_values(by='Nome Equipe')
-result_completo_nacional = result_completo_nacional.sort_values(by='Nome Equipe')
-positivacoes_completo = positivacoes_completo.sort_values(by='Nome Equipe')
-pernod_posi = pernod_posi.sort_values(by='EQUIPES')
-total_equipes = total_equipes.sort_values(by='Nome Equipe')
+result_completo = result_completo.sort_values(by=['Nome Equipe','MARCA']).reset_index(drop=True)
+result_completo_nacional = result_completo_nacional.sort_values(by=['Nome Equipe','ANALISE']).reset_index(drop=True)
+positivacoes_completo = positivacoes_completo.sort_values(by=['Nome Equipe','MARCA']).reset_index(drop=True)
+pernod_posi = pernod_posi.sort_values(by='EQUIPES').reset_index(drop=True)
+total_equipes = total_equipes.sort_values(by='Nome Equipe').reset_index(drop=True)
 
 
 # Salvando os DataFrames em um arquivo Excel com múltiplas planilhas
